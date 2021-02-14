@@ -6,17 +6,21 @@ interface DegradeProps{
 }
 
 export const Container = styled.div`
-
-    min-height: 100vh;
-    width: 100vw;
+    
 `
 
 export const Content = styled.div`
     display: flex;
     flex-direction: column;
     
+    width: 100%;
     max-width: 1200px;
     margin: 0 auto;
+    
+
+    @media(max-width: 800px){
+        padding: 16px;
+    }
 `
 
 export const Group = styled.div`
@@ -25,7 +29,7 @@ export const Group = styled.div`
 
 export const TextGroup = styled.div`
     margin-top: 120px;
-    margin-left: 100px;
+    margin-left: 108px;
     margin-bottom: 56px;
 
     display: flex;
@@ -43,6 +47,11 @@ export const TextGroup = styled.div`
         &:hover{
             filter: brightness(0.8);
         }
+
+        @media(max-width: 800px){
+            font-size: 80px;
+            max-width: 360px;
+        }
     }
 
     p{
@@ -51,6 +60,10 @@ export const TextGroup = styled.div`
         line-height: 40px;
         max-width: 480px;
     }
+
+    @media(max-width: 800px){
+        margin-left: 0;
+    }
 `
 
 export const TextTitle = styled.div`
@@ -58,10 +71,10 @@ export const TextTitle = styled.div`
 `
 
 export const Degrade = styled.h1<DegradeProps>`
-font-size: 72px;
-  background: -webkit-linear-gradient(10deg, ${props => props.color1}, ${props => props.color2});
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+    font-size: 72px;
+    background: -webkit-linear-gradient(10deg, ${props => props.color1}, ${props => props.color2});
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 `
 
 export const LinksContainer = styled.div`
@@ -76,6 +89,15 @@ export const LinksContainer = styled.div`
         font-size: 28px;
         color: #DC27B4;
         cursor: pointer;
+
+        @media(max-width: 800px){
+            margin-bottom: 8px;
+            font-size: 20px;
+        }
+    }
+
+    @media(max-width: 800px){
+        flex-direction: column;
     }
 `
 
@@ -84,7 +106,15 @@ export const SecondTextGroup = styled(TextGroup)`
         h1{
             font-size: 80px;
             max-width: 900px;
+
+            @media(max-width: 800px){
+                font-size: 50px;
+            }
         }
+    }
+
+    @media(max-width: 800px){
+        margin-left: 0;
     }
     
 `
@@ -113,9 +143,18 @@ export const FinalConsideration = styled.div`
             line-height: 40px;
         }
     }
+
+    @media(max-width: 800px){
+        display: flex;
+        flex-direction: column;
+        align-items: left;
+        justify-content: left;
+        margin: 56px 0;
+    }
 `
 
 export const FinalConsiderationList = styled.ul`
+
     list-style: none;
 
     li{ 

@@ -105,7 +105,7 @@ const Home = ()=>{
                 
                 <FourthWidget/>
 
-                <S.FinalConsideration>
+                {/* <S.FinalConsideration>
                     <div>
                         <h1>Get started with Framer Motion</h1>
                         <p>There’s a whole lot more to discover, dive into the complete API reference for Motion.</p>
@@ -152,7 +152,7 @@ const Home = ()=>{
                         </li>
                     </S.FinalConsiderationList>
                 
-                </S.FinalConsideration>
+                </S.FinalConsideration> */}
 
             </S.Content>
         </S.Container>
