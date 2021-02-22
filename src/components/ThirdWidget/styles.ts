@@ -7,6 +7,13 @@ export const Container = styled.div`
     height: 600px;
     border-radius: 24px;
     display: flex;
+
+    @media(max-width: 800px){
+        flex-direction: column;
+        height: 100%;
+    }
+
+    margin-bottom: 80px;
 `
 
 export const Left = styled.div`
@@ -20,6 +27,14 @@ export const Left = styled.div`
     overflow: hidden;
 
     border-radius: 24px 0px 0px 24px;
+
+    @media(max-width: 800px){
+        width: 100%;
+        height: 300px;
+        padding: 48px 0;
+
+        border-radius: 24px 24px 0px 0px;
+    }
 `
 
 export const Right = styled.div`
@@ -39,6 +54,14 @@ export const Right = styled.div`
     p{
         
     }
+
+    @media(max-width: 800px){
+        width: 100%;
+        height: 400px;
+        flex-direction: column;
+
+        border-radius: 0px 0px 24px 24px;
+    }
 `
 
 export const Circle = styled(motion.div)`
@@ -47,6 +70,11 @@ export const Circle = styled(motion.div)`
     border-radius: 50%;
     background-color:  #FFF;
     cursor: pointer;
+
+    @media(max-width: 800px){
+        width: 120px;
+        height: 120px;
+    }
 `
 
 export const LogLine = styled.div`

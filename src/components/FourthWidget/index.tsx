@@ -7,8 +7,9 @@ import * as S from './styles'
 import Card from './Card'
 
 const FourthWidget = () => {
-    const [count, setCount] = useState(0)
+    const [animationCount, setAnimationCount] = useState(0)
     const [variantsCount, setVariantsCount] = useState(0)
+    const [pathCount, setPathCount] = useState(0)
 
     const draggableRef = useRef(null)
 
@@ -16,15 +17,7 @@ const FourthWidget = () => {
 
     const { scrollYProgress } = useViewportScroll()
 
-    const scale = useTransform(scrollYProgress, [0, 1], [0, 2]);
-
-    useEffect(()=>{
-        console.log('count', count)
-    },[count])
-
-    useEffect(()=>{
-        console.log('setVariantsCount', variantsCount)
-    },[variantsCount])
+    const scale = useTransform(scrollYProgress, [0.1, 1], [0.2, 2]);
 
     const container = {
         hidden: { 
@@ -54,6 +47,21 @@ const FourthWidget = () => {
         }
       }
 
+      const icon = {
+        hidden: {
+          pathLength: 0,
+          pathOffset: 10,
+          pathSpacing: 0,
+          fill: "rgba(255, 255, 255, 0)"
+        },
+        visible: {
+          pathLength: 1,
+          pathOffset: 1000,
+          pathSpacing: 1,
+          fill: "rgba(255, 255, 255, 1)"
+        }
+      }
+
     return(
         <S.Container
             ref={scrollRef}
@@ -65,7 +73,7 @@ const FourthWidget = () => {
                 color2="#E500D6"
                 name="Animation"
                 hasReplay
-                replayFunction={()=>{setCount(state => state+1)}}
+                replayFunction={()=>{setAnimationCount(state => state+1)}}
             >
                 <S.Square
                     animate={{
@@ -73,7 +81,7 @@ const FourthWidget = () => {
                         rotate: [0, 360]
                     }}
                     transition={{duration: 0.5}}
-                    key={count}
+                    key={animationCount}
                 />
             </Card>
 
@@ -142,8 +150,8 @@ const FourthWidget = () => {
             >
                 <S.Square
                     style={{
-                        width: 80,
-                        height: 80,
+                        width: 60,
+                        height: 60,
                         borderRadius: 16,
                         background: '#5362FF',
                         scale
@@ -151,7 +159,7 @@ const FourthWidget = () => {
                 >
                     <S.Square
                         style={{
-                            width: 80,
+                            width: 60,
                             height: 60,
                             borderRadius: 8,
                             scaleY: scrollYProgress,
@@ -167,8 +175,29 @@ const FourthWidget = () => {
                 color2="#4797FF"
                 name="Path"
                 hasReplay
+                replayFunction={()=>{setPathCount(state => state + 1)}}
             >
-
+                <S.Square
+                    style={{
+                        backgroundColor: '#558FFF',
+                        padding: 24
+                    }}
+                    key={pathCount}
+                >
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 100 100"
+                    >
+                        <motion.path
+                            d="M0 100V0l50 50 50-50v100L75 75l-25 25-25-25z"
+                            variants={icon}
+                            initial="hidden"
+                            animate="visible"
+                            startOffset={0}
+                            transition={{duration: 1}}
+                        />
+                    </svg>
+                </S.Square>
             </Card>
         
         </S.Container>

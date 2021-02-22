@@ -5,8 +5,20 @@ interface DegradeProps{
     color2: string
 }
 
-export const Container = styled.div`
-    
+interface ContainerProps {
+    color: string
+}
+
+
+export const AllContainer = styled.div`
+    min-height: 100vh;
+    height: 100vh;
+    max-width: 100vw;
+`
+
+export const Container = styled.div<ContainerProps>`
+    background-color: ${props => props.color};
+    width: 100vw;
 `
 
 export const Content = styled.div`
@@ -17,6 +29,7 @@ export const Content = styled.div`
     max-width: 1200px;
     margin: 0 auto;
     
+    overflow: visible;
 
     @media(max-width: 800px){
         padding: 16px;
@@ -28,7 +41,7 @@ export const Group = styled.div`
 `
 
 export const TextGroup = styled.div`
-    margin-top: 120px;
+    margin-top: 80px;
     margin-left: 108px;
     margin-bottom: 56px;
 
@@ -121,7 +134,7 @@ export const SecondTextGroup = styled(TextGroup)`
 
 export const FinalConsideration = styled.div`
     width: 1000px;
-    margin: 56px auto;
+    margin: 108px auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -147,9 +160,10 @@ export const FinalConsideration = styled.div`
     @media(max-width: 800px){
         display: flex;
         flex-direction: column;
-        align-items: left;
-        justify-content: left;
-        margin: 56px 0;
+        align-items: flex-start;
+        justify-content: flex-start;
+        margin: 56px 0px;
+        width: 100%;
     }
 `
 
@@ -168,4 +182,8 @@ export const FinalConsiderationList = styled.ul`
             margin-left: 8px;
         }
     }
+`
+
+export const LastContainer = styled.div`
+    background-color: #457DFF;
 `

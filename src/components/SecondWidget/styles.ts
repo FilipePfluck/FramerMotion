@@ -11,6 +11,13 @@ export const Container = styled.div`
     height: 600px;
     border-radius: 24px;
     display: flex;
+
+    @media(max-width: 800px){
+        flex-direction: column;
+        height: 100%;
+    }
+
+    margin-bottom: 80px;
 `
 
 export const Left = styled.div`
@@ -24,6 +31,20 @@ export const Left = styled.div`
     overflow: hidden;
 
     border-radius: 24px 0px 0px 24px;
+
+    @media(max-width: 800px){
+        width: 100%;
+        padding: 48px 0;
+
+        border-radius: 24px 24px 0px 0px;
+    }
+
+    @media(max-width: 400px){
+        padding: 0px;
+        border: none;
+
+        border-radius: 24px;
+    }
 `
 
 export const Right = styled.div`
@@ -43,6 +64,17 @@ export const Right = styled.div`
         code{
             font-size: 14px;
         }
+    }
+
+    @media(max-width: 800px){
+        width: 100%;
+        flex-direction: row;
+
+        border-radius: 0px 0px 24px 24px;
+    }
+
+    @media(max-width: 400px){
+        display: none;
     }
 `
 
@@ -87,6 +119,10 @@ export const OpenedCard = styled(motion.div)`
             width: 280px;
             background-color: #F4DCFF;
             border-radius: 2px;
+
+            @media(max-width: 400px){
+                width: 100px;
+            }
         }
 
         h2{
@@ -96,7 +132,15 @@ export const OpenedCard = styled(motion.div)`
             width: 240px;
             background-color: #F4DCFF;
             border-radius: 2px;
+
+            @media(max-width: 400px){
+                width: 80px;
+            }
         }    
+    }
+
+    @media(max-width: 400px){
+        width: 200px;
     }
 `
 
@@ -112,6 +156,10 @@ export const SpansContainer = styled.div`
         width: 80px;
         background-color: #F4DCFF;
         border-radius: 2px;
+
+        @media(max-width: 400px){
+            width: 40px;
+        }
     }
 `
 
@@ -134,6 +182,12 @@ export const Ul = styled(motion.ul)`
 
     gap: 24px;
     padding: 20px;
+
+    @media(max-width: 400px){
+        padding: 16px;
+        width: 100%;
+        height: 100%;
+    }
 
 `
 
@@ -165,6 +219,10 @@ export const Li = styled(motion.li)<LiProps>`
         width: 120px;
         background-color: #F4DCFF;
         border-radius: 2px;
+
+        @media(max-width: 400px){
+            width: 80px;
+        }
     }
 
     h2{
@@ -172,6 +230,10 @@ export const Li = styled(motion.li)<LiProps>`
         width: 100px;
         background-color: #F4DCFF;
         border-radius: 2px;
+
+        @media(max-width: 400px){
+            width: 80px;
+        }
     }
 
     &:nth-child(1){

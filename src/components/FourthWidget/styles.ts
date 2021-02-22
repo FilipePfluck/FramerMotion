@@ -16,7 +16,12 @@ export const Container = styled.div`
     grid-template-rows: 1fr 1fr;
     gap: 32px;
 
-    overflow: auto;
+    @media(max-width: 800px){
+        grid-template-columns: 1fr;
+        height: auto;
+    }
+
+    margin-bottom: 80px;
 `
 
 export const Square = styled(motion.div)<SquareProps>`

@@ -7,6 +7,13 @@ export const Container = styled.div`
     height: 600px;
     border-radius: 24px;
     display: flex;
+
+    @media(max-width: 800px){
+        flex-direction: column;
+        height: 100%;
+    }
+
+    margin-bottom: 80px;
 `
 
 export const Left = styled.div`
@@ -20,6 +27,13 @@ export const Left = styled.div`
     overflow: hidden;
 
     border-radius: 24px 0px 0px 24px;
+
+    @media(max-width: 800px){
+        width: 100%;
+        padding: 48px 0;
+
+        border-radius: 24px 24px 0px 0px;
+    }
 `
 
 export const Right = styled.div`
@@ -33,6 +47,13 @@ export const Right = styled.div`
     border: 1px solid #242424;
 
     border-radius: 0px 24px 24px 0px;
+
+    @media(max-width: 800px){
+        width: 100%;
+        flex-direction: row;
+
+        border-radius: 0px 0px 24px 24px;
+    }
 `
 
 export const Square = styled(motion.div)`
@@ -46,11 +67,37 @@ export const Code = styled.div`
     height: 50%;
 
     border-bottom: 1px solid #242424;
+    padding: 16px;
+    
+    @media(max-width: 800px){
+        border-bottom: 0px;
+        border-right: 1px solid #242424;
+
+        height: 100%;
+        width: 50%;
+    }
+
+    @media(max-width: 400px){
+        display: none;
+    }
 `
 
 export const Switches = styled.form`
     height: 50%;
-    padding: 16px 0;
+    padding: 16px;
+
+    @media(max-width: 800px){
+        border-left: 1px solid #242424;
+
+        height: 100%;
+        width: 50%;
+    }
+
+    @media(max-width: 400px){
+        padding: 0px;
+        border: none;
+        width: 100%;
+    }
 `
 
 export const InputLine = styled.div`
@@ -58,6 +105,10 @@ export const InputLine = styled.div`
     align-items: center;
     flex-direction: row;
     margin: 16px 0;
+
+    @media(max-width: 400px){
+        justify-content: space-between;
+    }
 `
 
 export const NumberInputContainer = styled.div`

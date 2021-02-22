@@ -16,6 +16,10 @@ export const Container = styled.div<ContainerProps>`
     background: linear-gradient(124deg, ${props => props.color1}, ${props => props.color2});
     border-radius: 16px;
     padding: 32px;
+
+    @media(max-width: 800px){
+        height: 480px;
+    }
 `
 
 export const ChildrenContainer = styled.div`
