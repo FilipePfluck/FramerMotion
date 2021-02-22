@@ -15,8 +15,9 @@ const Home = ()=>{
         <S.AllContainer>
             <Header/>
 
-                
-                    {/* <S.Group>
+            <S.Container color="#141414">
+                <S.Content>
+                    <S.Group>
                         <S.TextGroup>
                             <S.TextTitle>
                                 <h1>Framer</h1>
@@ -34,8 +35,9 @@ const Home = ()=>{
                                 </h3>
                             </S.LinksContainer>
                         </S.TextGroup>
-                        <Smartphones/>
-                    </S.Group> */}
+                    </S.Group>
+                </S.Content>
+                </S.Container>
                 
                 <S.Container color="#141414">
                     <S.Content>

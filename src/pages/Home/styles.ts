@@ -21,11 +21,19 @@ export const Container = styled.div<ContainerProps>`
     width: 100vw;
 `
 
+export const FirstContainer = styled.div`
+    display: flex;
+
+    width: 100%;
+    max-width: 2000px;
+    margin: 0 auto;
+`
+
 export const Content = styled.div`
     display: flex;
     flex-direction: column;
     
-    width: 100%;
+
     max-width: 1200px;
     margin: 0 auto;
     
@@ -41,7 +49,7 @@ export const Group = styled.div`
 `
 
 export const TextGroup = styled.div`
-    margin-top: 80px;
+    margin-top: 120px;
     margin-left: 108px;
     margin-bottom: 56px;
 

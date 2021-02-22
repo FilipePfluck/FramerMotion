@@ -8,6 +8,9 @@ const GlobalStyle = createGlobalStyle`
         box-sizing: border-box;
         outline: 0;
     }
+    html, body {
+        max-width: 100vw;
+    }
     body {
         background: #141414;
         color: #FFF;
