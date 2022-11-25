@@ -17,6 +17,7 @@ const GlobalStyle = createGlobalStyle`
         -webkit-font-smoothing: antialiased;
         font-size: 16px;
         font-family: 'Roboto Slab', sans-serif;
+        overflow-x: hidden;
     }
     h1, h2, h3, h4, h5, h6, strong {
         font-weight: 500;
